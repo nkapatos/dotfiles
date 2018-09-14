@@ -1,0 +1,10 @@
+[user]
+	email = kapatosn@gmail.com
+	name = Nikolaos Kapatos
+	username = PixelVibe
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+[color]
+	ui = auto
+
