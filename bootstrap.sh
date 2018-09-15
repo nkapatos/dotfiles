@@ -103,11 +103,10 @@ local install_fonts=false;
     mkdir -p $font_dir
   fi
 
-  if [ "$install_fonts" == "true" ]
-    then
-      info 'Installing Fonts'
-      find "${DOTFILES_ROOT}/fonts" \( -name "*.[ot]tf" \) -type f -print0 | xargs -0 -n1 -I % cp "%" "$font_dir/"
-      success "Fonts Installed at $font_dir"
+  if [ "$install_fonts" == "true" ] ; then
+    info 'Installing Fonts'
+    find "${DOTFILES_ROOT}/fonts" \( -name "*.[ot]tf" \) -type f -print0 | xargs -0 -n1 -I % cp "%" "$font_dir/"
+    success "Fonts Installed at $font_dir"
   fi
 }
 
