@@ -7,4 +7,5 @@
 	excludesfile = ~/.gitignore
 [color]
 	ui = auto
-
+[credential]
+        helper = osxkeychain
