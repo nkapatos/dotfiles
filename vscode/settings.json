@@ -1,4 +1,10 @@
 {
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
         "suppressCommitNotFoundWarning": false,
@@ -15,7 +21,7 @@
     
     // Path to directory to save notes.
     "vsnotes.defaultNotePath": "/Users/mentalray/Documents/vsnotes/",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "gitlens.keymap": "alternate",
     "markdown.preview.scrollEditorWithPreview": false,
     "markdown.preview.scrollPreviewWithEditor": false,
@@ -23,18 +29,29 @@
     "[typescript]": {},
     "editor.fontFamily": "Fira Code",
     "editor.fontSize": 13,
-    "editor.fontWeight": "100",
     "editor.fontLigatures": true,
     "emmet.includeLanguages": {
         "javascript": "javascriptreact",
         "typescript": "javascriptreact",
     },
     "files.associations": {
-        "*.css": "postcss"
+        "*.css": ["postcss", "css"],
     },
     "gitlens.resultsExplorer.files.layout": "auto",
     "workbench.sideBar.location": "right",
     "vim.disableExtension": true,
     "editor.renderWhitespace": "boundary",
     "typescript.tsserver.log": "verbose",
+"vim.statusBarColorControl": true,
+"workbench.colorCustomizations": {
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f"
+},
+"workbench.panel.defaultLocation": "right",
+"gitlens.views.fileHistory.enabled": true,
+"gitlens.views.lineHistory.enabled": true,
+"gitlens.views.compare.files.layout": "auto",
+"gitlens.views.search.files.layout": "auto",
+"extensions.autoUpdate": false,
 }

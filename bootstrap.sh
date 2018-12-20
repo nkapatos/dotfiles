@@ -110,9 +110,39 @@ local install_fonts=false;
   fi
 }
 
+install_nil_zsh_theme() {
+local install_nil_zsh_theme=false;
+  user "Would you like to install nil theme? You need to have oh-my-zsh installed\n\
+       [y]es, [N]o"
+  read -n 1 action
+
+  case "$action" in
+    y )
+        install_nil_zsh_theme=true;;
+    * )
+        ;;
+  esac
+    
+  if test "$(uname)" = "Darwin" ; then
+    # MacOS
+    font_dir="$HOME/Library/Fonts"
+  else
+    # Linux
+    font_dir="$HOME/.local/share/fonts"
+    mkdir -p $font_dir
+  fi
+
+  if [ "$install_nil_zsh_theme" == "true" ] ; then
+    info 'Installing nil theme'
+    find "${DOTFILES_ROOT}/fonts" \( -name "*.[ot]tf" \) -type f -print0 | xargs -0 -n1 -I % cp "%" "$font_dir/"
+    success "Fonts Installed at $font_dir"
+  fi
+}
+
 install_extras() {
   install_vscode_settings
   install_fonts
+  install_nil_zsh_theme
 }
 
 install_dotfiles

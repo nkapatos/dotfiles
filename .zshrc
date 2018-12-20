@@ -11,7 +11,7 @@ export ZSH="/Users/$(whoami)/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="bureau"
+ ZSH_THEME="nil"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -42,7 +42,7 @@ ZSH_THEME="bureau"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -60,6 +60,8 @@ ZSH_THEME="bureau"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+export NVM_NO_USE=true
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -68,6 +70,10 @@ ZSH_THEME="bureau"
 plugins=(
   git
   zsh-syntax-highlighting
+  zsh-nvm
+  zsh-better-npm-completion
+  osx
+  docker
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -102,6 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Custom
+export _Z_CMD='j'
 . /usr/local/etc/profile.d/z.sh
 
 export NVM_DIR="$HOME/.nvm"
