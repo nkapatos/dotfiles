@@ -69,11 +69,12 @@ export NVM_NO_USE=true
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-syntax-highlighting
   zsh-nvm
   zsh-better-npm-completion
   osx
   docker
+  zsh-256color
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -109,7 +110,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Custom
 export _Z_CMD='j'
-. /usr/local/etc/profile.d/z.sh
+. ~/z.sh
+# . /usr/local/etc/profile.d/z.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
