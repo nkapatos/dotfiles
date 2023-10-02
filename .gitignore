@@ -1,1 +1,2 @@
-.DS_Store
+# Exclude intellij files from git
+.idea/
