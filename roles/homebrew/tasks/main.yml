@@ -1,0 +1,20 @@
+---
+- name: homebrew_packages | install | packages
+  tags: homebrew, homebrew_packages
+  community.general.homebrew:
+    name: "{{ item }}"
+    state: present
+  when:
+    - ansible_distribution == 'MacOSX'
+    - homebrew_packages is defined
+  loop: "{{ homebrew_packages }}"
+
+- name: homebrew_casks | install | casks
+  tags: homebrew, homebrew_casks
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  when:
+    - ansible_distribution == 'MacOSX'
+    - homebrew_casks is defined
+  loop: "{{ homebrew_casks }}"

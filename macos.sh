@@ -19,9 +19,10 @@ which -s brew
 if [[ $? != 0 ]] ; then
     # https://github.com/Homebrew/install/#install-homebrew-on-macos-or-linux
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-#    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-#    eval "$(/opt/homebrew/bin/brew shellenv)"
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 
     brew update && brew upgrade
 
@@ -38,4 +39,4 @@ fi
 # use installed python (not default from OS)
 #export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 #
-ansible-playbook init.yml
+ansible-playbook main.yaml
