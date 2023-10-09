@@ -1,0 +1,1 @@
+Git config files for the user. a.k.a. git config --global

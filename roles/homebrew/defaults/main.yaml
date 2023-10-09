@@ -1,0 +1,28 @@
+homebrew_packages:
+  - git
+  - zsh
+  - tmux
+  - thefuck
+  - ctop
+  - htop
+  - lsd
+  - fzf
+  - zoxide
+  - grep
+  - pyenv
+  - pyenv-virtualenv
+  - pnpm
+#  - hyperkit // I am using remote docker engines. FYI: Not working with Apple Silicon
+#  - qemu // Alternative if arch. is Apple ARM Silicon. Do not forget the port mapping VM <-> Docker
+  - minikube
+  - docker
+  - docker-compose
+  - rustup-init
+  - go
+
+homebrew_casks:
+  - firefox
+  - google-chrome
+  - flutter
+  - slack
+  - spotify
