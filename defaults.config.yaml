@@ -1,0 +1,5 @@
+---
+# Symlink dotfiles to home directory
+configure_dotfiles: false
+
+# Set the source dotfiles directory

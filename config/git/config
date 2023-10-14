@@ -1,0 +1,10 @@
+[user]
+	name = Nikos Kapatos
+    email = nikos@kapatos.com
+[core]
+	editor = nano
+	excludesfile = ~/.config/git/ignore
+[color]
+	ui = auto
+[credential]
+    helper = osxkeychain

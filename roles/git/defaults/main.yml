@@ -1,0 +1,10 @@
+# Set the  source git config directory
+dotfiles_git_config_dir: "{{ config_directory }}/git"
+
+# Set the destination git config directory
+dotfiles_git_home_dir: "{{ ansible_env.HOME }}/git"
+
+# Git files to symlink
+dotfiles_git_files:
+  - config
+  - ignore

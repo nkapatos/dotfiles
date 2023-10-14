@@ -1,0 +1,37 @@
+# Download Znap, if it's not there yet.
+[[ -r ~/zsh_plugins_repos/znap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/zsh_plugins_repos/znap
+source ~/zsh_plugins_repos/znap/znap.zsh  # Start Znap
+
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -la'
+alias ll='ls -laht'
+alias lt='ls --tree'
+
+znap source marlonrichert/zsh-hist
+bindkey '^[q' push-line-or-edit
+bindkey -r '^Q' '^[Q'
+
+ZSH_AUTOSUGGEST_STRATEGY=( history )
+znap source zsh-users/zsh-autosuggestions
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets )
+znap source zsh-users/zsh-syntax-highlighting
+
+znap eval zoxide 'zoxide init --cmd j zsh'  # Initialize zoxide
+znap eval thefuck 'thefuck --alias'
+
+znap function _pyenv pyenv              'eval "$( pyenv init - --no-rehash )"'
+compctl -K    _pyenv pyenv
+
+znap function _pip_completion pip       'eval "$( pip completion --zsh )"'
+compctl -K    _pip_completion pip
+
+znap function _python_argcomplete pipx  'eval "$( register-python-argcomplete pipx  )"'
+complete -o nospace -o default -o bashdefault \
+           -F _python_argcomplete pipx
+
+znap function _pipenv pipenv            'eval "$( pipenv --completion )"'
+compdef       _pipenv pipenv

@@ -1,0 +1,11 @@
+---
+- name: git | config | dotfiles
+  tags: git, config, dotfiles
+  file:
+      src: "{{ dotfiles_git_config_dir }}/{{ item }}"
+      dest: "{{ dotfiles_git_home_dir }}/{{ item }}"
+      state: link
+  when:
+      - dotfiles_git_config_dir is defined
+      - dotfiles_git_home_dir is defined
+  loop: "{{ dotfiles_git_files }}"
