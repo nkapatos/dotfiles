@@ -1,5 +1,7 @@
 - hosts: all
   vars:
     install_homebrew_if_missing: true
+    config_directory: "{{ playbook_dir }}/config"
   roles:
     - role: homebrew
+    - role: git

@@ -18,3 +18,23 @@
     - ansible_distribution == 'MacOSX'
     - homebrew_casks is defined
   loop: "{{ homebrew_casks }}"
+
+- name: homebrew_external_casks_tap | install | casks_tap
+  tags: homebrew, homebrew_tap, homebrew_external_casks
+  community.general.homebrew_tap:
+      name: "{{ item }}"
+      state: present
+  when:
+      - ansible_distribution == 'MacOSX'
+      - homebrew_external_casks is defined
+  loop: "{{ homebrew_external_casks.tap }}"
+
+- name: homebrew_external_casks | install | casks
+  tags: homebrew, homebrew_external_casks
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  when:
+    - ansible_distribution == 'MacOSX'
+    - homebrew_external_casks is defined
+  loop: "{{ homebrew_external_casks.cask }}"

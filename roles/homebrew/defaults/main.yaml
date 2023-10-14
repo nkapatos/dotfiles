@@ -12,6 +12,7 @@ homebrew_packages:
   - pyenv
   - pyenv-virtualenv
   - pnpm
+  - node
 #  - hyperkit // I am using remote docker engines. FYI: Not working with Apple Silicon
 #  - qemu // Alternative if arch. is Apple ARM Silicon. Do not forget the port mapping VM <-> Docker
   - minikube
@@ -24,5 +25,14 @@ homebrew_casks:
   - firefox
   - google-chrome
   - flutter
-  - slack
+#  Make it configurable
+#  - slack
   - spotify
+
+homebrew_external_casks:
+  tap:
+    - homebrew/cask-fonts
+  cask:
+    - font-hack-nerd-font
+    - font-jetbrains-mono
+    - font-jetbrains-mono-nerd-font
